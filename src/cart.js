@@ -63,6 +63,9 @@ function updatePrice (lineItems, data) {
     });
 }
 
+function removeItem(){
+
+}
 module.exports = {
     total: total,
     addItem: addItem,
