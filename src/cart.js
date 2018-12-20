@@ -63,11 +63,37 @@ function updatePrice (lineItems, data) {
     });
 }
 
-function removeItem(){
-
+/**
+ * Menghapus item dari line items.
+ * @param {Array<LineItem>} lineItems  
+ * @param {string} itemId        //Id item yang ingin dihapus
+ * @return {Array<LineItem>}
+ */
+function removeItem(lineItems, itemId){
+    return lineItems.filter(function (lineItem) {
+        return lineItem.id !== itemId
+    })
 }
+
+// var people = [
+//     { name: 'Alex', gender: 'male' },
+//     { name: 'Gary', gender: 'male' },
+//     { name: 'Lisa', gender: 'female' },
+// ]
+
+// function getByGender (gender) {
+//     return people.filter(function (person) {
+//         return person.gender === gender
+//     })
+// }
+
+// console.log(getByGender('male'))
+// console.log(getByGender('female'))
+
+
 module.exports = {
     total: total,
     addItem: addItem,
     updatePrice: updatePrice,
+    removeItem: removeItem,
 };
